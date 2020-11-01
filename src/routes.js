@@ -53,6 +53,8 @@ module.exports = function routes(app) {
         tags,
         link,
       })
+      await app.model.artist.findByIdAndUpdate(artist, title,
+       {new: true});
       res.json({status: 'ok', result})
     }
     catch(err) {
