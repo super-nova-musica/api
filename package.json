@@ -4,6 +4,7 @@
   "main": "index.js",
   "author": "paulodevsilva <silva.paulohr@gmail.com>",
   "license": "MIT",
+  "type": "module",
   "scripts": {
     "dev": "nodemon server.js"
   },
