@@ -4,12 +4,13 @@
   "main": "index.js",
   "author": "paulodevsilva <silva.paulohr@gmail.com>",
   "license": "MIT",
-  "type": "module",
   "scripts": {
-    "dev": "nodemon server.js",
-    "start": "node server.js"
+    "start": "nodemon server.js"
   },
   "devDependencies": {
+    "@babel/core": "^7.12.3",
+    "@babel/node": "^7.12.1",
+    "@babel/preset-env": "^7.12.1",
     "dotenv": "^8.2.0",
     "morgan": "^1.10.0",
     "nodemon": "^2.0.6",

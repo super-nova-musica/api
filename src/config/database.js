@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 const { DB_URL ,DB_USER, DB_PASS, DB_HOST, DB_NAME, DB_PORT, DB_TYPE } = process.env;
 
 if (DB_TYPE == 'cloud') {
-    const connection = mongoose.connect(DB_URL, 
+    const db = mongoose.connect(DB_URL, 
       {
         useCreateIndex: true,
         useNewUrlParser: true,
@@ -12,13 +12,14 @@ if (DB_TYPE == 'cloud') {
       }
     )
 
-  mongoose.connection.on('err', () => console.error(`> Connection error ${DB_TYPE}`))
-  mongoose.connection.once('open', () => console.log(`> Database connected ${DB_TYPE}`))
+  mongoose.connection.on('err', () => {return console.error(`> Connection error ${DB_TYPE}`)});
+  mongoose.connection.once('open', () => {return  console.log(`> Database connected ${DB_TYPE}`)});
+  
+  return db;
 
-  return connection
 
 } else {
-  const connection = mongoose.connect(
+  const db = mongoose.connect(
     `mongodb://${DB_USER}:${DB_PASS}@${DB_HOST}:${DB_PORT}/${DB_NAME}?authSource=admin`,
     {
       useCreateIndex: true,
@@ -28,12 +29,13 @@ if (DB_TYPE == 'cloud') {
     }
   )
 
-  mongoose.connection.on('err', () => console.error(`> Connection error ${DB_TYPE}`))
-  mongoose.connection.once('open', () => console.log(`> Database connected ${DB_TYPE}`))
+  mongoose.connection.on('err', () => {return console.error(`> Connection error ${DB_TYPE}`)});
+  mongoose.connection.once('open', () => {return  console.log(`> Database connected ${DB_TYPE}`)});
 
-  return connection
+  return db;
+
 }
 
 
 
-export default connection
+export default db

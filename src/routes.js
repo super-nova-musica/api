@@ -85,8 +85,15 @@ export default function routes(app) {
 
   app.post('/reputation', async (req, res) => {
     const { user_id: artist, music_id: music } = req.headers;
+    const {evaluation} = req.body
      try {
-        const result = await app.model.reputation.create({artist, music, ...req.body})
+        const result = await app.model.reputation.create(
+          {
+            artist,
+            music,
+            evaluation
+          
+          })
 
         res.json({ stautus: 'ok', result})
      }
