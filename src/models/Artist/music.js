@@ -24,7 +24,7 @@ MusicSchema.pre("save",async function(next) {
   if(process.env.STORAGE_TYPE == 'cloud') {
   console.log('ok')
 
-      this.link = `${process.env.STORAGE_URL}/files/${this.link}`
+      this.link = `${process.env.STORAGE_URL}/${this.link}`
       next()
   } else {
     this.link = `http://localhost:${process.env.PORT}/files/${this.link}`
