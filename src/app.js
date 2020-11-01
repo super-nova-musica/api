@@ -1,4 +1,6 @@
-require('dotenv').config({ silent: true });
+if(process.env.ENV == 'dev') {
+  require('dotenv').config({silent: true})
+}
 
 const express = require('express');
 const bodyParser = require('body-parser');
