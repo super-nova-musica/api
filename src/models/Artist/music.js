@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+const mongoose = require('mongoose');
 
 const MusicSchema = new mongoose.Schema({
   title: {
@@ -35,4 +35,4 @@ MusicSchema.pre("save",async function(next) {
 });
 
 
-export default mongoose.model('Music', MusicSchema);
+module.exports =  mongoose.model('Music', MusicSchema);

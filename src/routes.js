@@ -1,4 +1,4 @@
-export default function routes(app) {
+module.exports = function routes(app) {
   // app.post('/artist', async (req, res) => {
   //   try {
       

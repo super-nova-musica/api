@@ -1,17 +1,17 @@
 require('dotenv').config();
 
-import express from 'express';
-import bodyParser from 'body-parser';
-// import morgan from 'morgan';
-import cors from 'cors';
-import multer from 'multer';
-import path from 'path';
-// import swagger from 'swagger-ui-express';
+const express = require('express');
+const bodyParser = require('body-parser');
+// const morgan = require 'morgan';
+const cors = require('cors');
+const multer = require('multer');
+const path = require('path');
+// const swagger = require 'swagger-ui-express';
 
-import routes from './routes';
-import upload_config from './config/upload';
-import './config/database';
-import model from './models';
+const routes = require('./routes');
+const upload_config = require('./config/upload');
+require( './config/database')();
+const model = require('./models');
 // import swagger_file from './swagger_output.json';
 
 const app = express();
@@ -32,4 +32,4 @@ app.use(cors());
  routes(app)
 // require('./routes')(app)
 
-export default app;
+module.exports = app;

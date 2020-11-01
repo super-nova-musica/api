@@ -1,6 +1,6 @@
-import artist from './Artist/artist'
-import music from  './Artist/music'
-import reputation from './Artist/reputation'
+const artist = require('./Artist/artist');
+const music = require ('./Artist/music');
+const reputation = require('./Artist/reputation');
 
 const models = {
   artist,
@@ -8,4 +8,4 @@ const models = {
   reputation
 }
 
-export default models
+module.exports =  models

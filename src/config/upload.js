@@ -1,8 +1,8 @@
-import multer from 'multer';
-import aws from 'ibm-cos-sdk';
-import path from 'path';
-import crypto from 'crypto';
-import multerS3 from 'multer-s3';
+const multer  = require('multer');
+const aws = require('ibm-cos-sdk');
+const path = require('path');
+const crypto = require('crypto');
+const multerS3 = require('multer-s3');
 
 const config = {
   endpoint: new aws.Endpoint(process.env.AWS_ENDPOINT),
@@ -46,7 +46,7 @@ const storageTypes = {
 
     })
 }
-export default {
+module.exports = {
     dest: path.resolve(__dirname, '..', '..', 'tmp','uploads'),
     storage: storageTypes[process.env.STORAGE_TYPE],
     limits: {

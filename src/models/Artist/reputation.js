@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+const mongoose = require('mongoose');
 
 const ReputationSchema = new mongoose.Schema({
   evaluation: {
@@ -15,4 +15,4 @@ const ReputationSchema = new mongoose.Schema({
   },
 });
 
-export default mongoose.model('Reputation', ReputationSchema);
+module.exports =  mongoose.model('Reputation', ReputationSchema);

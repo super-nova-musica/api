@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+const mongoose = require('mongoose');
 
 const ArtistSchema = new mongoose.Schema({
   name: {
@@ -16,4 +16,4 @@ const ArtistSchema = new mongoose.Schema({
   musics: [String],
 });
 
-export default mongoose.model('Artist', ArtistSchema);
+module.exports = mongoose.model('Artist', ArtistSchema);
