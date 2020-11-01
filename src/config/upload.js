@@ -50,7 +50,7 @@ module.exports = {
     dest: path.resolve(__dirname, '..', '..', 'tmp','uploads'),
     storage: storageTypes[process.env.STORAGE_TYPE],
     limits: {
-        fileSize: 5 * 1024 * 1024,
+        fileSize: 10 * 1024 * 1024 * 1024,
     },
     fileFilter: (req, file, cb) => {
         const allowedMimes = [
@@ -61,7 +61,8 @@ module.exports = {
             'audio/mpeg',
             'audio/mp4',
             'audio/ogg',
-            'audio/acc'
+            'audio/acc',
+            'audio/mp3'
 
 
         ];
