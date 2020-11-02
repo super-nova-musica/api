@@ -1,0 +1,149 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Hack",
+        "version": "1.0",
+        "contact": {
+            "name": "Paulo Silva ",
+            "email": "silva.paulohr@gmail.com "
+        },
+        "description": "descobrindo artistas"
+    },
+    "servers": [
+        {
+            "url": "https://code-stage-master-id8lsqxg3t81.herokuapp.com"
+        }
+    ],
+    "paths": {
+        "/artist": {
+            "get": {
+                "summary": "Your GET endpoint",
+                "tags": [],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                },
+                "operationId": "get-artist",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {}
+                            }
+                        }
+                    },
+                    "description": ""
+                },
+                "parameters": [],
+                "description": "listar artistas"
+            },
+            "post": {
+                "summary": "",
+                "operationId": "post-artist",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                },
+                "description": "criar perfil de artista",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {}
+                            }
+                        }
+                    },
+                    "description": "{\n\"email\": \"jose@mendes.com\",\n\"name\": \"José Mendes\",\n\"password\": \"12445\"\n\n}"
+                }
+            }
+        },
+        "/music": {
+            "get": {
+                "summary": "Your GET endpoint",
+                "tags": [],
+                "responses": {},
+                "operationId": "get-music",
+                "description": "listar musicas"
+            },
+            "post": {
+                "summary": "",
+                "operationId": "post-music",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                },
+                "parameters": [
+                    {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "in": "header",
+                        "name": "user_id",
+                        "description": "id do artista ",
+                        "required": true
+                    }
+                ],
+                "description": "criar música ",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {}
+                            },
+                            "examples": {
+                                "example-1": {
+                                    "value": {}
+                                }
+                            }
+                        }
+                    },
+                    "description": "{\n\"title\": \"Novo hype\",\n\"description\": \"Top demais\",\n\"tags\": [\"hype\", \"pop\"]\n}"
+                }
+            }
+        },
+        "/artist/:id": {
+            "get": {
+                "summary": "Your GET endpoint",
+                "tags": [],
+                "responses": {},
+                "operationId": "get-artist-:id",
+                "parameters": [
+                    {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "in": "query",
+                        "name": "artist_id"
+                    }
+                ]
+            }
+        },
+        "/music/:id": {
+            "get": {
+                "summary": "Your GET endpoint",
+                "tags": [],
+                "responses": {},
+                "operationId": "get-music-:id",
+                "parameters": [
+                    {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "in": "query",
+                        "name": "music_id"
+                    }
+                ]
+            }
+        }
+    },
+    "components": {
+        "schemas": {},
+        "securitySchemes": {}
+    }
+}
