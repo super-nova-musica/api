@@ -8,7 +8,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const multer = require('multer');
 const path = require('path');
-const swagger = require 'swagger-ui-express';
+const swagger = require('swagger-ui-express');
 
 const routes = require('./routes');
 const upload_config = require('./config/upload');
@@ -31,7 +31,7 @@ app.use('/files', express.static(path.resolve(__dirname, '..','tmp','uploads')))
 app.use(bodyParser.urlencoded({ extended: true }));
 // app.use(morgan('dev'));
 app.use(cors());
-//app.use('/doc', swagger.serve, swagger.setup(doc))
+app.use('/doc', swagger.serve, swagger.setup(doc))
  routes(app)
 // require('./routes')(app)
 
