@@ -31,7 +31,7 @@ app.use('/files', express.static(path.resolve(__dirname, '..','tmp','uploads')))
 app.use(bodyParser.urlencoded({ extended: true }));
 // app.use(morgan('dev'));
 app.use(cors());
-app.use('/doc', swagger.serve, swagger.setup(doc))
+//app.use('/doc', swagger.serve, swagger.setup(doc))
  routes(app)
 // require('./routes')(app)
 
