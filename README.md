@@ -6,28 +6,25 @@
 
 > Api desenvolvida no Hackathon Code Stage
 
-
-# :pushpin: Table of Contents
-
-* [Installation](#construction_worker-installation)
-* [Technologies](#rocket)
-* [Getting Started](#runner-start-project)
+* [Instalação ](#construction_worker-installation)
+* [Tecnologias](#rocket)
+* [Iniciar projeto](#runner-start-project)
 
 
 
 
-# :construction_worker: Installation
+# :construction_worker: Instalação 
 
-**You need to install [Node.js](https://nodejs.org/en/download/) and [Yarn](https://yarnpkg.com/) first, then clone the repository.**
+**Instale o [Node.js](https://nodejs.org/en/download/) e [Yarn](https://yarnpkg.com/), depois clone o repositório.**
 
-**Cloning Repository**
+**Clonando Repositório**
 
 ```
 git clone https://github.com/super-nova-musica/api.git
 
 ```
 
-**Install dependencies**
+**Instalando dependências **
 ``` 
 npm install or yarn install
 ```
@@ -37,12 +34,12 @@ npm install or yarn install
   - **MongoDB/MongoDB Atlas**
   - **IBM Cloud Object Storage**
 
-A Super Nova music Api disponibiliza métricas em relação à quais novos artistas então fazendo sucesso.
+A Super Nova music Api disponibiliza métricas em relação à quais novos artistas então fazendo sucesso,
+atraindo profissionais da música, gravadoras, A&R e ouvintes, com o objetivo de melhorar a experiência de consumo e impulsionar o mercado da música através de dados de consumo utilizando Inteligência Artificial e Machine Learning.
 
-# :runner: Start Project
+# :runner: Iniciar projeto 
 
-Run the following command in order to start the application in a development environment:
-
+Execute o seguinte comando para iniciar o aplicativo em um ambiente de desenvolvimento:
 ```
 yarn dev or npm run dev
 ```
