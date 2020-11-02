@@ -91,7 +91,7 @@
                 "description": "criar música ",
                 "requestBody": {
                     "content": {
-                        "application/json": {
+                        "multipart/form-data": {
                             "schema": {
                                 "type": "object",
                                 "properties": {}
@@ -101,9 +101,20 @@
                                     "value": {}
                                 }
                             }
+                        },
+                        "application/xml": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {}
+                            }
+                        },
+                        "application/json": {
+                            "schema": {
+                                "type": "object"
+                            }
                         }
                     },
-                    "description": "{\n\"title\": \"Novo hype\",\n\"description\": \"Top demais\",\n\"tags\": [\"hype\", \"pop\"]\n}"
+                    "description": "{\n\"music\",\n\"title\": \"Novo hype\",\n\"description\": \"Top demais\",\n\"tags\": [\"hype\", \"pop\"]\n}"
                 }
             }
         },
@@ -138,7 +149,8 @@
                         "in": "query",
                         "name": "music_id"
                     }
-                ]
+                ],
+                "description": ""
             }
         }
     },
